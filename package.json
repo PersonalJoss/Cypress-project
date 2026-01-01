@@ -1,0 +1,23 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "Testing",
+  "homepage": "https://github.com/JossZC/Cypress-project#readme",
+  "bugs": {
+    "url": "https://github.com/JossZC/Cypress-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JossZC/Cypress-project.git"
+  },
+  "license": "ISC",
+  "author": "Jocselyn Zumbado Chartier",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cypress": "^15.8.1"
+  }
+}
