@@ -16,9 +16,9 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "test:e2e": "npm run cypress:run --spec \"cypress/e2e/Home_page.cy.js\""
   },
-  "homepage": "https://github.com/JossZC/Cypress-project#readme",
   "dependencies": {
     "cypress": "^15.8.1"
   }  
