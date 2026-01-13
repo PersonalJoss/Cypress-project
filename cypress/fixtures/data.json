@@ -1,0 +1,6 @@
+{
+  "baseurl" : "https://www.amazon.com/",
+  "siginPageTitle": "Sign in or create account",
+  "invalidEmailTest": "invalidtest@test.com",
+  "invalidEmailErrorMessage": "Please enter a valid email address."
+}

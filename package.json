@@ -1,7 +1,7 @@
 {
   "name": "cypress-project",
   "version": "1.0.0",
-  "description": "Testing",
+  "description": "This code is for Amazon automation testing as part of my personal knowledge. It's written in Cypress/js and has everything needed to run in just a few steps.",
   "homepage": "https://github.com/JossZC/Cypress-project#readme",
   "bugs": {
     "url": "https://github.com/JossZC/Cypress-project/issues"
@@ -15,9 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
+  "homepage": "https://github.com/JossZC/Cypress-project#readme",
   "dependencies": {
     "cypress": "^15.8.1"
-  }
+  }  
+
 }
