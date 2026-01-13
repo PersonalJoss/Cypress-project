@@ -14,10 +14,10 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Instalar dependencias
-        run: npm ci # o el comando para tu gestor de paquetes
+        run: npm install
 
       - name: Ejecutar pruebas
-        run: npm test # o el comando de pruebas de tu proyecto
+        run: npm run test:e2e
