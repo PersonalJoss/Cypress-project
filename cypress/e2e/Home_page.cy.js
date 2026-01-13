@@ -22,7 +22,7 @@ describe('Amazon - Home page', () => {
     HomePage.validateHomePage();
 
     // 3. Verify that the search field is present
-    HomePage.elements.searchField.should('be.visible');
+    HomePage.elements.searchField().should('be.visible');
   });
 
 });
