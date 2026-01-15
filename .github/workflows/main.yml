@@ -1,4 +1,4 @@
-name: Pruebas Automáticas CI
+name: Pruebas Automáticas
 
 on:
   pull_request:
@@ -7,6 +7,8 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout del código
         uses: actions/checkout@v3
