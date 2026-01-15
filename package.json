@@ -16,11 +16,20 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
+    "clean:reports": "rm -rf cypress/reports",
+    "pretest": "npm run clean:reports",
     "cypress:run": "cypress run",
-    "test:e2e": "npm run cypress:run --spec \"cypress/e2e/*.cy.js\""
+    "posttest": "npm run report:merge && npm run report:generate",
+    "report:merge": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/full-report.json",
+    "report:generate": "npx marg cypress/reports/full-report.json --reportDir cypress/reports/html --reportPageTitle \"Reporte de pruebas automatizadas - $(date +'%d/%m/%Y %H:%M')\" --inline"
   },
   "dependencies": {
     "cypress": "^15.8.1"
-  }  
-
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2"
+  }
 }

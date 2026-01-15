@@ -1,4 +1,4 @@
-name: Pruebas Automáticas CI
+name: Pruebas Automáticas
 
 on:
   pull_request:
@@ -7,6 +7,8 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout del código
         uses: actions/checkout@v3
@@ -20,4 +22,20 @@ jobs:
         run: npm install
 
       - name: Ejecutar pruebas
-        run: npm run test:e2e
+        run: npm run cypress:run
+        env:
+          TZ: 'America/Costa_Rica'
+
+      - name: Cargar reporte de los resultados
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html
+
+      - name: Cargar reporte a paginas de GitHub
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html
