@@ -3,6 +3,7 @@ name: Pruebas Automáticas
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    branches: [main]
 
 jobs:
   test-job:
