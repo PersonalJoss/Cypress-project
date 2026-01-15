@@ -1,6 +1,6 @@
 {
-  "baseurl" : "https://www.amazon.com/",
-  "siginPageTitle": "Sign in or create account",
+  "baseurl" : "http://uitestingplayground.com/",
+  "HomePageTitle": "UI Test Automation Playground",
   "invalidEmailTest": "invalidtest@test.com",
   "invalidEmailErrorMessage": "Please enter a valid email address."
 }
