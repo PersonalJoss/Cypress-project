@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","272","should have a link to the ""Home"" page","","Mon Jan 19 16:28:03 UTC 2026","passed","Mon Jan 19 16:28:03 UTC 2026","","Resources Page Validation","",""
+"","831","Verify that the home page is displayed","","Mon Jan 19 16:27:58 UTC 2026","passed","Mon Jan 19 16:27:59 UTC 2026","","UI Test Automation Playground - Home page","",""
+"","454","should display the correct title for the Resources page","","Mon Jan 19 16:28:02 UTC 2026","passed","Mon Jan 19 16:28:03 UTC 2026","","Resources Page Validation","",""
+"","391","should navigate to the Home page when the ""Home"" link is clicked","","Mon Jan 19 16:28:03 UTC 2026","passed","Mon Jan 19 16:28:03 UTC 2026","","Resources Page Validation","",""
