@@ -5,7 +5,7 @@ class HomePage{
         homeElementLogo:() => cy.get('img[src="/static/cube.png"]'),
         //Location: Home page > Home button
         homeButton:()=> cy.get('#navbarSupportedContent li:first-child a').should('have.text', 'Home'),
-        //Location: Home page > Home button
+        //Location: Home page > Resources button
         resourcesButton:()=> cy.get('#navbarSupportedContent li:last-child a').should('have.text', 'Resources'),
     };
 
