@@ -1,6 +1,6 @@
 # Cypress-project Jocselyn Zumbado Chartier.
 
-This repository contains automated tests for a personal project on the UI Testing Playgroung website. This code is in Cypress/js and it has all the necessary steps to be executed.
+This repository contains automated tests for a personal project on the UI Testing Playground website. This code is in Cypress/js and it has all the necessary steps to be executed.
 The code is commented to make it easier to understand the tests.
 
 ## Steps
