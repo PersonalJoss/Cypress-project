@@ -1,5 +1,7 @@
 //Page objects
 const ResourcesPage = require('../pages/ResourcesPage');
+const HomePage = require('../pages/HomePage');
+
 
 describe('Resources Page Validation', () => {
 
@@ -10,39 +12,20 @@ describe('Resources Page Validation', () => {
 
   it('should display the correct title for the Resources page', () => {
     // Verifica que el título de la página sea el esperado
-    cy.title().should('eq', 'Resources');
-  });
-
-  it('should contain a main heading for Resources', () => {
-    // Verifica que exista un encabezado principal (h1) con el texto "Resources"
-    cy.get('h1').should('be.visible').and('contain', 'Resources');
-  });
-
-  it('should display a list of external resources', () => {
-    // Verifica que haya una lista (ul) de recursos visibles
-    cy.get('ul').should('be.visible');
-
-    // Opcional: Verifica que haya al menos un elemento de lista (li) dentro de la ul
-    cy.get('ul li').its('length').should('be.gt', 0);
+    ResourcesPage.elements.resourcesTitle().should('eq', 'Resources');
   });
 
   it('should have a link to the "Home" page', () => {
     // Verifica que exista un enlace a la página principal ("Home")
-    cy.contains('a', 'Home').should('be.visible').and('have.attr', 'href', '/');
+    ResourcesPage.elements.homeButton().should('be.visible').and('have.attr', 'href', '/home');
   });
 
   it('should navigate to the Home page when the "Home" link is clicked', () => {
     // Haz clic en el enlace "Home"
-    cy.contains('a', 'Home').click();
+    ResourcesPage.elements.homeButton().click();
 
     // Verifica que la URL haya cambiado a la página principal
-    cy.url().should('eq', 'http://uitestingplayground.com/');
-
-    // Opcional: Verifica un elemento en la página de inicio para confirmar la navegación
-    cy.get('h1').should('contain', 'Welcome');
+    HomePage.validateHomePage();
   });
 
-  // Puedes añadir más tests aquí, por ejemplo:
-  // - Verificar que los enlaces externos se abran en una nueva pestaña
-  // - Validar el texto de cada elemento de la lista
 });

@@ -24,11 +24,4 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('isElementExist', (element) => {
-    cy.wait(1000);
-    cy.get('body').then(body => {
-      if (body.find(element).length > 0) {
-        element();
-      }
-    });
-});
+import '@shelex/cypress-allure-plugin';
