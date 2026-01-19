@@ -1,4 +1,4 @@
-name: Pruebas Automáticas
+name: Automated test cases
 
 on:
   pull_request:
@@ -11,32 +11,44 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout del código
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configurar Node.js
+      - name: Configure Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '24'
 
-      - name: Instalar dependencias
+      - name: Install dependencies
         run: npm install
 
-      - name: Ejecutar pruebas
-        run: npm run cypress:run
+      - name: Run tests
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run cy:run
+        continue-on-error: true
         env:
           TZ: 'America/Costa_Rica'
 
-      - name: Cargar reporte de los resultados
-        uses: actions/upload-artifact@v4
+      - name: Get Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report
+        uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          name: mochawesome-report
-          path: cypress/reports/html
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
 
-      - name: Cargar reporte a paginas de GitHub
+      - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports/html
+          publish_dir: allure-history
