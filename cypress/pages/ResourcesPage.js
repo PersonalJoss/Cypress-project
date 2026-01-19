@@ -7,13 +7,17 @@ class ResorcesPage{
     elements = {
         //Location: Home page > Resources button
         resourcesButton:()=> cy.get('#navbarSupportedContent li:last-child a').should('have.text', 'Resources'),
+        //Location: Resources page -> Title
+        resourcesTitle:()=> cy.title().should('eq', 'Resources'),
+        //Location: Resources page -> Home button
+        homeButton:()=> cy.contains('a', 'Home'),
     };
 
     //This method is to check if the home page loads correctly.
     navigateToResourcesPage(){
         cy.log('Navigating to resorces page');
         cy.visit(Data.baseurl);
-        cy.click(resourcesButton);
+        this.elements.resourcesButton().click();
     };
 
     //This method is to check if the home page loads correctly.
